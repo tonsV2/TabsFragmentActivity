@@ -16,12 +16,8 @@ import android.widget.TabWidget;
 
 
 /* ref: http://developer.android.com/resources/samples/Support4Demos/src/com/example/android/supportv4/app/FragmentTabsPager.html
- * TODO: this should be FragmentTabsActivity extends FragmentActivity
- * 		and then MainActivity extends FragmentTabsActivity
- * 		implement addTab as method of FragmentTabsActivity and
- * 		in the constructor of MainActivity use addTab to add the tabfragments
- * TODO: implement tab switching by swiping left and right... wtf isnt this standard
  * TODO: implement horizontal view...
+ * TODO: hide header, add action bar, change header icon, etc. lots of customizations
  */
 
 public class TabsFragmentActivity extends FragmentActivity
@@ -139,7 +135,6 @@ public class TabsFragmentActivity extends FragmentActivity
         }
 
         @Override
-//        public Fragment getItem(int position) {
         public Fragment getItem(int position) {
             TabInfo info = mTabs.get(position);
             return Fragment.instantiate(mContext, info.clss.getName(), info.args);
@@ -149,10 +144,6 @@ public class TabsFragmentActivity extends FragmentActivity
         public void onTabChanged(String tabId) {
             int position = mTabHost.getCurrentTab();
             mViewPager.setCurrentItem(position);
-        }
-
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         }
 
         @Override
@@ -171,6 +162,10 @@ public class TabsFragmentActivity extends FragmentActivity
 
         @Override
         public void onPageScrollStateChanged(int state) {
+        }
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         }
     }
 }
