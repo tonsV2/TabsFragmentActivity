@@ -1,9 +1,8 @@
-
 #DEPRECATED
 
 The code in this project is hopelessly deprecated. I started to develop the below instead.
 
-https://gist.github.com/snot/6718749
+https://gist.github.com/tonsV2/6718749
 
 
 HOWEVER!!!
